@@ -11,6 +11,6 @@ This is Salesdock test repository
 * run laravel built in server
 
 # adding new rule definition
-* Rule definitions are added to App/Services/RuleDefinition folder
+* Rule definitions are added to App/Services/RuleDefinitions folder
 * refer existing definition files for creating new rules
 * use isActive variable to enable/disable a definition
