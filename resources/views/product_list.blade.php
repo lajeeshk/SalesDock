@@ -15,7 +15,7 @@
     <td>{{$product->upload_speed}} Mb/s</td>
     <td>{{$product->download_speed}} Mb/s</td>
     <td>{{$product->technology}}</td>
-    <td>{{$product->static_ip}}</td>
+    <td>@if($product->static_ip)Yes @else No @endif</td>
 </tr>
 @endforeach
 </table>
