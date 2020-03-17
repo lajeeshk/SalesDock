@@ -2,6 +2,7 @@
 
 @section('content')
 <h1>Welcome to dasboard</h1>
+<p>Total {{count($products)}} Products </p>
 <table class="table">
     <th>Product Name</th>
     <th>Upload Speed</th>
