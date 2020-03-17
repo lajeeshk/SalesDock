@@ -7,7 +7,11 @@ This is Salesdock test repository
 
 # how to run this code
 * clone the repo
-* modify database config
+* run "composer install"
+* copy .env.example to .env and add your database details
+* run "php artisan key:generate" to generate your application key
+* run "php artisan migrate" to run your migration and generate database tables
+* run "php artisan db:seed" to populate tables with test data
 * run laravel built in server
 
 # adding new rule definition
