@@ -16,7 +16,9 @@ class RuleSelector {
             if(preg_match("/(.*)\.php$/", $file, $matches)) {
                 $ruleClassName = self::ruleDefinitionNamespace.$matches[1];
                 $ruleObject = new $ruleClassName();
-                $rules[] = $ruleObject->getDefinition();
+                if($ruleObject->isActive()){
+                    $rules[] = $ruleObject->getDefinition();
+                }
             }
             
         }
