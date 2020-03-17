@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Products;
-use Illuminate\Http\Request;
+
+use App\Services\DbFilter;
 
 class ProductsController extends Controller
 {
@@ -14,8 +14,10 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Products::all();
-        //dd($products);
+
+        $filter = new DbFilter('products');
+        $products = $filter->buildQueryFromRule();
+
         return view('product_list',compact('products'));
     }
 }
