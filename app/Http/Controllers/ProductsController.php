@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Services\DbFilter;
+use App\Services\RuleSelector;
 
 class ProductsController extends Controller
 {
@@ -17,7 +18,8 @@ class ProductsController extends Controller
 
         $filter = new DbFilter('products');
         $products = $filter->buildQueryFromRule();
-
-        return view('product_list',compact('products'));
+        $ruleDefinitions = RuleSelector::getAllFromFile();
+ 
+        return view('product_list',compact('products','ruleDefinitions'));
     }
 }
